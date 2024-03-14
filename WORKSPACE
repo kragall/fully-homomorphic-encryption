@@ -12,15 +12,13 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 # depends upon the target '//:license'.
 http_archive(
     name = "rules_license",
-    sha256 = "6157e1e68378532d0241ecd15d3c45f6e5cfd98fc10846045509fb2a7cc9e381",
     urls = [
         "https://github.com/bazelbuild/rules_license/releases/download/0.0.4/rules_license-0.0.4.tar.gz",
     ],
 )
 
 http_archive(
-    name = "bazel_skylib",
-    sha256 = "74d544d96f4a5bb630d465ca8bbcfe231e3594e5aae57e1edbf17a6eb3ca2506",
+    name = "bazel_skylib",    
     urls = [
         "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/1.3.0/bazel-skylib-1.3.0.tar.gz",
         "https://github.com/bazelbuild/bazel-skylib/releases/download/1.3.0/bazel-skylib-1.3.0.tar.gz",
@@ -34,7 +32,6 @@ bazel_skylib_workspace()
 # Install TFHE
 http_archive(
     name = "rules_foreign_cc",
-    sha256 = "bcd0c5f46a49b85b384906daae41d277b3dc0ff27c7c752cc51e43048a58ec83",
     strip_prefix = "rules_foreign_cc-0.7.1",
     url = "https://github.com/bazelbuild/rules_foreign_cc/archive/0.7.1.tar.gz",
 )
@@ -46,7 +43,6 @@ rules_foreign_cc_dependencies()
 http_archive(
     name = "com_nlohmann_json",
     build_file = "//patches:nlohmann_json.BUILD",
-    sha256 = "d69f9deb6a75e2580465c6c4c5111b89c4dc2fa94e3a85fcd2ffcd9a143d9273",
     strip_prefix = "json-3.11.2",
     url = "https://github.com/nlohmann/json/archive/refs/tags/v3.11.2.tar.gz",
 )
@@ -54,7 +50,6 @@ http_archive(
 http_archive(
     name = "tfhe",
     build_file = "//patches:tfhe.BUILD",
-    sha256 = "7ad88b70b389bfdb871488a90372b0cecd9ba731183ba02c3cd0ce86c9adcc93",
     strip_prefix = "tfhe-a085efe91314f994285fcb06ab8bdae3d55e4505",
     url = "https://github.com/tfhe/tfhe/archive/a085efe91314f994285fcb06ab8bdae3d55e4505.tar.gz",
 )
@@ -76,7 +71,6 @@ new_git_repository(
 # Install XLS and its transitive dependencies.
 http_archive(
     name = "com_google_xls",
-    sha256 = "da8807270d854701f51b7171eed3a70b2f64e5a39ad4ee940eec0ea6eda33e77",
     strip_prefix = "xls-8dee07ff6374302b86cdd21b89df4c476c23288a",
     url = "https://github.com/google/xls/archive/8dee07ff6374302b86cdd21b89df4c476c23288a.tar.gz",
 )
@@ -85,7 +79,6 @@ http_archive(
 http_archive(
     name = "com_github_hlslibs_ac_types",
     build_file = "@com_google_xls//dependency_support/com_github_hlslibs_ac_types:bundled.BUILD.bazel",
-    sha256 = "7ab5e2ee4c675ef6895fdd816c32349b3070dc8211b7d412242c66d0c6e8edca",
     strip_prefix = "ac_types-57d89634cb5034a241754f8f5347803213dabfca",
     urls = ["https://github.com/hlslibs/ac_types/archive/57d89634cb5034a241754f8f5347803213dabfca.tar.gz"],
 )
@@ -93,7 +86,6 @@ http_archive(
 # Toolchain to install LLVM, a requirements for XLS
 http_archive(
     name = "com_grail_bazel_toolchain",
-    sha256 = "06e1421091f153029c070f1ae364f8cb5a61dab20ede97a844a0f7bfcec632a4",
     strip_prefix = "bazel-toolchain-0.8",
     urls = [
         "https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.8.zip",
@@ -136,7 +128,6 @@ grpc_deps()
 http_archive(
     name = "abc",
     build_file = "//patches:abc.BUILD",
-    sha256 = "7fa5a448a4309fb4d6cf856c3fe4cc4be46b09dd552a05d5cfacd75f8d9504ad",
     strip_prefix = "abc-eb44a80bf2eb8723231e72bb095c97d1e4834d56",
     urls = [
         "https://github.com/berkeley-abc/abc/archive/eb44a80bf2eb8723231e72bb095c97d1e4834d56.zip",
@@ -170,7 +161,6 @@ initialize_external_repositories()
 # Install rules_rust for rust codegen
 http_archive(
     name = "rules_rust",
-    sha256 = "4a9cb4fda6ccd5b5ec393b2e944822a62e050c7c06f1ea41607f14c4fdec57a2",
     urls = ["https://github.com/bazelbuild/rules_rust/releases/download/0.25.1/rules_rust-v0.25.1.tar.gz"],
 )
 
